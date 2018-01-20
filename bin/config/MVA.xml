@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<Task name="TrainNN" type="TrainNN" config="" nodePath="TrainNN" />
+	<mod></mod>
+	
+	<minPt>1.0</minPt>
+	<maxPt>15</maxPt>
+
+	<Prepare cuts="" >
+		<opts>nTrain_Signal=50000:nTrain_Background=50000:nTest_Signal=50000:nTest_Background=50000:SplitMode=Random:NormMode=NumEvents</opts>
+	</Prepare>
+
+	<Methods>
+		<MLP enable="true" opts="H:V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5,N+5:TestRate=10:!UseRegulator" />
+	</Methods>
+
+	<TrainNN>
+		
+		<input>
+			<TFile url="/home/jdb12/work/dimuonAna/PairNN/bin/all.root" name="signal"/>
+		</input>
+
+		<output>
+			<TFile url="trained_NN.root" />
+		</output>
+	</TrainNN>
+</config>

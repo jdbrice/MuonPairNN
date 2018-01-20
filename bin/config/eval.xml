@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<Task name="Eval" type="Eval" config="" nodePath="SignalEval" />
+	<Task name="Eval" type="Eval" config="" nodePath="BackgroundEval" />
+	<Task name="Eval" type="Eval" config="" nodePath="MixedEval" />
+
+	<N>500000</N>
+
+	<SignalEval classId="0">
+		<EventLoop progress="true" />
+		<input>
+			<dst treeName="sigPairs" url="all.root" nEvents="{N}" />
+		</input>
+
+		<output>
+			<TFile url="pairNN_Signal.root" />
+		</output>
+	</SignalEval>
+
+	<BackgroundEval classId="1">
+		<EventLoop progress="true" />
+		<input>
+			<dst treeName="bgPairs" url="all.root" nEvents="{N}" />
+		</input>
+
+		<output>
+			<TFile url="pairNN_Background.root" />
+		</output>
+	</BackgroundEval>
+
+
+	<MixedEval classId="2">
+		<EventLoop progress="true" />
+		<input>
+			<dst treeName="mixedPairs" url="all.root" nEvents="{N}" />
+		</input>
+
+		<output>
+			<TFile url="pairNN_Mixed.root" />
+		</output>
+	</MixedEval>
+
+</config>
