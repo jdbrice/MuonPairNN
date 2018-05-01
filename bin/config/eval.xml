@@ -4,7 +4,7 @@
 	<Task name="Eval" type="Eval" config="" nodePath="BackgroundEval" />
 	<Task name="Eval" type="Eval" config="" nodePath="MixedEval" />
 
-	<N>500000</N>
+	<N>1000000</N>
 
 	<SignalEval classId="0">
 		<EventLoop progress="true" />
